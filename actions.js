@@ -97,6 +97,7 @@ act.set(net.RefreshNameCards, async function () {
 
 	this.send(net.RefreshNameCards);
 	room.broadcast(net.FetchNames, cards.map(card => card.name));
+	room.broadcast(net.FetchConfig, driver.getConfig());
 });
 
 act.set(net.FetchNames, function () {
@@ -151,6 +152,15 @@ act.set(net.FetchFlippedCards, function () {
 			color: card.color,
 		});
 	}
+});
+
+act.set(net.FetchConfig, function () {
+	let room = this.room;
+	if (!room || !room.driver) {
+		return;
+	}
+
+	this.send(net.FetchConfig, room.driver.getConfig());
 });
 
 module.exports = act;

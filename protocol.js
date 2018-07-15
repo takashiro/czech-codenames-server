@@ -9,6 +9,7 @@ const cmd = new Enum(
 	'FetchColors',
 	'FlipCard',
 	'FetchFlippedCards',
+	'FetchConfig',
 );
 
 module.exports = cmd;

@@ -80,10 +80,11 @@ act.set(net.RefreshNameCards, async function () {
 	let cards = reservoir(25, names.length)
 	.map(index => new NameCard(names[index]));
 
+	let exchange_factor = Math.random() < 0.5;
 	let colors = generateColors(25, [
 		1, // Black
-		9, // Red
-		8, // Blue
+		exchange_factor ? 9 : 8, // Red
+		exchange_factor ? 8 : 9, // Blue
 		7, // Yellow
 	]);
 	for (let i = 0; i < 25; i++) {

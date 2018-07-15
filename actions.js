@@ -88,6 +88,7 @@ act.set(net.RefreshNameCards, async function () {
 	]);
 	for (let i = 0; i < 25; i++) {
 		cards[i].color = colors[i];
+		cards[i].index = i;
 	}
 
 	let driver = room.driver;
@@ -126,12 +127,28 @@ act.set(net.FlipCard, function (index) {
 	let cards = room.driver.cards;
 	let card = cards[index];
 	if (card) {
+		card.flipped = true;
 		room.broadcast(net.FlipCard, {
 			index: index,
 			color: card.color,
 		});
 	} else {
 		this.send(net.FlipCard, {index: index});
+	}
+});
+
+act.set(net.FetchFlippedCards, function () {
+	let room = this.room;
+	if (!room || !room.driver) {
+		return;
+	}
+
+	let cards = room.driver.cards.filter(card => card.flipped);
+	for (let card of cards) {
+		this.send(net.FlipCard, {
+			index: card.index,
+			color: card.color,
+		});
 	}
 });
 

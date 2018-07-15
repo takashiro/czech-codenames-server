@@ -13,7 +13,6 @@ class NameCard {
 	constructor(name, color = 0) {
 		this.name = name;
 		this.color = color;
-		this.uncovered = true;
 	}
 
 	/**

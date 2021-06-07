@@ -4,7 +4,9 @@
   "description": "codenames (karuta extension)",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "npm run lint && npm run jest",
+    "lint": "eslint --ext=ts,js .",
+    "jest": "jest --no-cache"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,21 @@
   "bugs": {
     "url": "https://github.com/takashiro/karuta-codenames/issues"
   },
-  "homepage": "https://github.com/takashiro/karuta-codenames#readme"
+  "homepage": "https://github.com/takashiro/karuta-codenames#readme",
+  "devDependencies": {
+    "@karuta/server": "^0.1.1",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.2"
+  },
+  "files": [
+    "dist"
+  ]
 }

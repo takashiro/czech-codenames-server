@@ -4,36 +4,6 @@ const fs = require('fs');
 const net = require('./protocol');
 const NameCard = require('./NameCard');
 
-
-/**
- * Reservoir sampling algorithm
- * @param {number} num
- * @param {number} total
- * @return {number[]}
- */
-function reservoir(num, total) {
-	if (total <= num) {
-		let selected = new Array(total);
-		for (let i = 0; i < total; i++) {
-			selected[i] = i;
-		}
-		return selected;
-	}
-
-	let selected = new Array(num);
-	for (let i = 0; i < num; i++) {
-		selected[i] = i;
-	}
-	for (i = num; i < total; i++) {
-		let j = Math.floor(Math.random() * i);
-		if (j < num) {
-			selected[j] = i;
-		}
-	}
-
-	return selected;
-}
-
 /**
  * Generate colors
  * @param {number} total number of name cards

@@ -37,6 +37,10 @@
     "typescript": "^4.3.2"
   },
   "files": [
-    "dist"
-  ]
+    "dist",
+    "words.txt"
+  ],
+  "dependencies": {
+    "@karuta/core": "^0.1.3"
+  }
 }

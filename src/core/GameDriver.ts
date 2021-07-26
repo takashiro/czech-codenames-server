@@ -16,13 +16,15 @@ import Config from './Config';
 export default class GameDriver implements Driver<Config> {
 	protected cards: NameCard[] = [];
 
+	protected name = '@karuta/codenames';
+
 	protected config: Config = {
 		row: 5,
 		column: 5,
 	};
 
 	getName(): string {
-		return 'codenames';
+		return this.name;
 	}
 
 	getProfile(): DriverProfile<Config> {

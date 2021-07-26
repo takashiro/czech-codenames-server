@@ -1,9 +1,12 @@
 {
-  "name": "karuta-codenames",
+  "name": "@karuta/codenames",
   "version": "0.1.0",
   "description": "codenames (karuta extension)",
   "main": "index.js",
   "scripts": {
+    "start": "karuta-server",
+    "build": "tsc",
+    "debug": "tsc --incremental --sourceMap",
     "test": "npm run lint && npm run jest",
     "lint": "eslint --ext=ts,js .",
     "jest": "jest --no-cache"
@@ -23,8 +26,12 @@
     "url": "https://github.com/takashiro/karuta-codenames/issues"
   },
   "homepage": "https://github.com/takashiro/karuta-codenames#readme",
+  "dependencies": {
+    "@karuta/codenames-core": "^0.1.2",
+    "@karuta/core": "^0.4.1"
+  },
   "devDependencies": {
-    "@karuta/server": "^0.1.1",
+    "@karuta/server": "^0.2.0",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
@@ -38,9 +45,7 @@
   },
   "files": [
     "dist",
+    "karuta.config.json",
     "words.txt"
-  ],
-  "dependencies": {
-    "@karuta/core": "^0.1.3"
-  }
+  ]
 }

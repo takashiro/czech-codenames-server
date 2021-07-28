@@ -45,6 +45,7 @@
   },
   "files": [
     "dist",
+    "index.js",
     "karuta.config.json",
     "words.txt"
   ]

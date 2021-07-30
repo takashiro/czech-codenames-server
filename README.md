@@ -26,8 +26,14 @@ Introduction
 
 It's a small online app to play Codenames.
 
-Running Environment
+Related Components
 -------------------
-1. Nginx
-2. [Karuta Server](https://github.com/takashiro/karuta-node-server)
-3. [Client](https://github.com/takashiro/czech-codenames)
+1. [Definitions](https://github.com/takashiro/czech-codenames-core)
+1. [React Client](https://github.com/takashiro/czech-codenames-react)
+
+Get Started
+-----------
+1. Run `npm i`.
+1. Run `npm link && npm link @karuta/codenames`
+1. Run `npm start`. The server will be listening on port 5260.
+1. The port number can be configured in `config.json`.

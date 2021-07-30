@@ -2,7 +2,7 @@ import {
 	User,
 	Method,
 } from '@karuta/core';
-import { Context } from '@karuta/codenames-core';
+import { Context, NameCard } from '@karuta/codenames-core';
 
 import Action from '../core/Action';
 import GameDriver from '../core/GameDriver';
@@ -33,9 +33,13 @@ export default class NameCardHandler extends Action {
 			return;
 		}
 
-		room.broadcast(Method.Patch, Context.NameCard, {
+		card.setRevealed(true);
+
+		const change: Partial<NameCard> = {
 			index,
 			color: card.getColor(),
-		});
+			revealed: card.isRevealed(),
+		};
+		room.broadcast(Method.Patch, Context.NameCard, change);
 	}
 }

@@ -20,7 +20,7 @@ export default class NameCardsHandler extends Action {
 		}
 
 		const cards = await this.driver.createCards();
-		room.broadcastExcept(user, Method.Head, Context.NameCards, cards.map((card) => ({
+		room.broadcastExcept(user, Method.Put, Context.NameCards, cards.map((card) => ({
 			name: card.getName(),
 		})));
 		user.notify(Method.Put, Context.NameCards, cards.map((card) => ({

@@ -26,6 +26,7 @@ export default class NameCardsHandler extends Action {
 		user.notify(Method.Put, Context.NameCards, cards.map((card) => ({
 			name: card.getName(),
 			color: card.getColor(),
+			revealed: card.isRevealed(),
 		})));
 	}
 
@@ -34,6 +35,7 @@ export default class NameCardsHandler extends Action {
 		return cards.map((card) => ({
 			name: card.getName(),
 			color: card.isRevealed() ? card.getColor() : undefined,
+			revealed: card.isRevealed(),
 		}));
 	}
 }

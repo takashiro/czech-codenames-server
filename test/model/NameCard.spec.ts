@@ -1,3 +1,4 @@
+import { it, expect } from '@jest/globals';
 import { Color } from '@karuta/codenames-core';
 
 import NameCard from '../../src/model/NameCard';

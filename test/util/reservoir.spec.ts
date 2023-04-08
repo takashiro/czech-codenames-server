@@ -1,3 +1,5 @@
+import { it, expect } from '@jest/globals';
+
 import reservoir from '../../src/util/reservoir';
 
 it('randomly select some numbers', () => {

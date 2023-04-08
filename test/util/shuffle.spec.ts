@@ -1,3 +1,5 @@
+import { it, expect } from '@jest/globals';
+
 import shuffle from '../../src/util/shuffle';
 
 it('shuffles an array', () => {

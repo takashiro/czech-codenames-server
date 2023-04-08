@@ -2,7 +2,7 @@
   "name": "@karuta/codenames",
   "version": "0.1.0",
   "description": "codenames (karuta extension)",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "start": "karuta-server",
     "build": "tsc",
@@ -31,8 +31,8 @@
     "@karuta/core": "^0.5.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.5.0",
     "@karuta/server": "^0.2.0",
-    "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
@@ -46,7 +46,6 @@
   },
   "files": [
     "dist",
-    "index.js",
     "karuta.config.json",
     "words.txt"
   ]

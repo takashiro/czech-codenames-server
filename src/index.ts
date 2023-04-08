@@ -1,1 +1,3 @@
-export { default } from './core/GameDriver';
+import GameDriver from './core/GameDriver';
+
+export default GameDriver;
